@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hello</h1>
+      <!-- Contact Section Start -->
+      <div id="rs-contact" class="rs-contact gray-color pt-120 md-pt-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                   <div class="contact-box">
+                        <div class="sec-title mb-45">
+                            <span class="sub-text new-text white-color">Let's Talk</span>
+                            <h2 class="title white-color">Speak With Expert Engineers.</h2>
+                        </div>
+                       <div class="address-box mb-25">
+                           <div class="address-icon">
+                               <i class="fa fa-home"></i>
+                           </div>
+                           <div class="address-text">
+                                <span class="label">Email:</span>
+                                <a href="tel:123222-8888">support@tejars.com</a>
+                           </div>
+                       </div>
+                       {% comment %} <div class="address-box mb-25">
+                           <div class="address-icon">
+                               <i class="fa fa-phone"></i>
+                           </div>
+                           <div class="address-text">
+                               <span class="label">Phone:</span>
+                               <a href="#">support@tejars.com</a>
+                           </div>
+                       </div> {% endcomment %}
+                       <div class="address-box">
+                           <div class="address-icon">
+                               <i class="fa fa-map-marker"></i>
+                           </div>
+                           <div class="address-text">
+                               <span class="label">Address:</span>
+                               <div class="desc">30 N Gould St, Sheridan, USA</div>
+                           </div>
+                       </div>
+                       <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+                       <script>
+                          {% for msg in messages %}
+                             
+                              swal("{{msg}}");
+                          {% endfor %}
+                       </script>
+                   </div>
+                </div> 
+                <div class="col-lg-8 pl-70 md-pl-15 md-mt-40">
+                    <div class="contact-widget onepage-style">
+                       <div class="sec-title2 mb-40">
+                           <span class="sub-text contact mb-15">Get In Touch-{{message}}</span>
+                           <h2 class="title testi-title">Fill The Form Below</h2>
+
+                       </div>
+                       
+                      
+                        {% comment %} <div id="form-messages"></div> {% endcomment %}
+                        <form id="contact-form" method="post" action="{% url 'indu' %}">
+                            {% csrf_token %}
+                            <fieldset>
+                                <div class="row">
+                                    <div class="col-lg-6 mb-30 col-md-6 col-sm-6">
+                                        <input class="from-control" type="text" id="name" name="name" placeholder="Name" required="">
+                                    </div> 
+                                    
+                                    {% comment %} <div class="col-lg-6 mb-30 col-md-6 col-sm-6">
+                                        <input class="from-control" type="text" id="email" name="email" placeholder="E-Mail" required="">
+                                    </div>    {% endcomment %}
+                                    {% comment %} <div class="col-lg-6 mb-30 col-md-6 col-sm-6">
+                                        <input class="from-control" type="text" id="phone" name="phone" placeholder="Phone Number" required="">
+                                    </div> {% endcomment %}
+                                    <div class="col-lg-6 mb-30 col-md-6 col-sm-6">
+                                        <input class="from-control" type="email" id="email" name="email" placeholder="E-Mail" required="">
+                                    </div> 
+                              
+                                    <div class="col-lg-12 mb-30">
+                                        <textarea class="from-control" id="message" name="message" placeholder="Your message Here" required=""></textarea>
+                                    </div>
+                                </div>
+                                <div class="btn-part">
+                                    <div class="form-group mb-0">
+                                        <input class="readon learn-more submit" type="submit" value="Submit">
+                                    </div>
+                                </div>  
+                            </fieldset>
+                        </form> 
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="map-canvas pt-120 md-pt-70">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2831.167517664898!2d-106.95713908493809!3d44.79777458568364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5335fabc2a66677f%3A0x8f85bd068d1afb8a!2s30%20N%20Gould%20St%2C%20Sheridan%2C%20WY%2082801%2C%20USA!5e0!3m2!1sen!2snp!4v1642147850937!5m2!1sen!2snp"></iframe>
+        </div> 
+    </div>
+
+</body>
+</html>
